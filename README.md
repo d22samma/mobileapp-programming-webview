@@ -12,14 +12,20 @@ Create Webview - Actvity_Main
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
 Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
 
+Private Member
+Add class in main_activity called Webview.
+Search id on screen named my_Webview.
+Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`. Hint: `findViewById()`
+Locate the WebView element created in step 1 using the WebView ID
 
+Created WebviewClient with Enabled Javascript
+Create a new WebViewClient to attach to the WebView
+Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
 
 For a passing grade (G) need to (in order):
 
-Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`. Hint: `findViewById()`
-Locate the WebView element created in step 1 using the WebView ID
-Create a new WebViewClient to attach to the WebView
-Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()`
+
+`
 Add a html page as an asset.
 Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
 Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
