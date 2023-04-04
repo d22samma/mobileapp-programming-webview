@@ -14,7 +14,7 @@ Text value hämtas från `strings.xml` till filen `AndoidManifest.xml` som anrop
     // Code from `string.xml`
 ```  
 
-
+****
 ## Enable Internet
 Genom att lägga till `<uses-permission android:name="android.permission. INTERNET" />` tillåter man att internet används.  
 Denna koden används inom `AndroidManifest.xml` för att göra internet tillgängligt inom applikationen.
@@ -24,6 +24,7 @@ Denna koden används inom `AndroidManifest.xml` för att göra internet tillgän
     // Code from `AndroidManifest.xml`
 ```
 
+****
 ## Create Webview
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
 Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
@@ -37,6 +38,7 @@ Genom att ändra från text till webbview input. Istället för en textview komp
 
 ```
 
+****
 ## Private Member
 
 Lägger till en klass kallad `Webview` med ett attribut som kallas `myWebView`.
@@ -63,7 +65,7 @@ Inom `onCreate()` anger man att `MyWebView` hämtar data från `id` som kallas `
 ```
 
 
-
+****
 ## WebviewClient with Enabled Javascript
 Create a new WebViewClient to attach to the WebView
 Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
@@ -76,7 +78,7 @@ Genom att skapa en klass kallad WebSettings med webSettings som attribut. motsva
         // Code from `MainActivity.java`
 ```
 
-
+****
 ## Html page
 Jag skapade en html fil. Jag startade med att skapa en ny `assetfolder` inom mappen som kallas `app`. Jag skapa en ny fil inom mappen `asset` där jag skapa en ny fil som jag kalla `page.html`.
 Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
@@ -92,6 +94,7 @@ Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
 <!-- Code from `page.html` -->
 ```
 
+****
 ## Internal Page
 
 
@@ -115,9 +118,10 @@ if (id == R.id.action_internal_web) {
 // Code from `MainActivity.java` 
 ```
 
-![](External.png){width=50 height=100}
+![](External.png)
 _Screenshot of `External Page`_
 
+****
 ## External page
 
 ``` java
@@ -140,6 +144,6 @@ if (id == R.id.action_external_web)
 // Code from `MainActivity.java`
 ```
 
-![](Internal.png){width=50 height=100}
+![](Internal.png)
 _Screenshot of `Internal Page`_
 
