@@ -1,77 +1,141 @@
 
-# Rapport
+# Assignment 2: WebView
 
-Rename App - Strings.
-Fork the webview app and clone the fork from your own Github repository in Android Studio
-Rename your App. Hint: `res/values/strings.xml`
+## Rename App
+Genom att döpa om text value inom `strings,xml` med `Id ` som motsvarar `app_name`. Denna text value hämtas inom filen `AndoidManifest.xml`.
+```java
+    android:label="@string/app_name"
+```
+_Code from `Androidmanifest.xml`_
 
-Enabled Internet AndroidManifest
-Enable Internet access for your App. Hint: `AndroidManifest.xml`
+``` java
+    <string name="app_name"> My App </string>
+```
+_Code from `string.xml`_
 
-Create Webview - Actvity_Main
+
+
+## Enable Internet
+Genom att lägga till
+``` java
+    <uses-permission android:name="android.permission.INTERNET" />
+```
+_Code from `AndroidManifest.xml`_
+
+## Create Webview
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
 Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
 
-Private Member
-Add class in main_activity called Webview.
-Search id on screen named my_Webview.
-Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`. Hint: `findViewById()`
-Locate the WebView element created in step 1 using the WebView ID
+Genom att ändra från text till webbview input. Istället för en textview komponent visas en webview upp istället. Med hjälp av `android:id="@+id/my_webview` ger man ett specifikt `id` till `Webview`.
 
-Created WebviewClient with Enabled Javascript
+``` java
+<WebView
+        android:id="@+id/my_webview"
+```
+_Code from `MainActivity.java`_
+
+
+## Private Member
+
+Lägger till en klass kallad `Webview` med ett attribut som kallas `myWebView`.
+
+``` java
+public class MainActivity extends AppCompatActivity {
+    private WebView myWebView;
+    ...
+```
+_Code from `MainActivity.java`_
+
+
+Inom `onCreate()` anger man att `MyWebView` hämtar data från `id` som kallas `my_webview`
+``` java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        myWebView = findViewById(R.id.my_webview);
+        ...
+```
+_Code from `MainActivity.java`_
+
+
+## WebviewClient with Enabled Javascript
 Create a new WebViewClient to attach to the WebView
 Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
 
-Add html page as asset
-Add a html page as an asset.
+Genom att skapa en klass kallad WebSettings med webSettings som attribut. motsvarar att hämta settings inom myWebView. Websettings sätts med hjälp av `webSettings.setJavaScriptEnabled(true)`.
 
-Implement External, Internal page
-Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
-Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
-`
-Write a short report where you explain the things that you have done. Include one (1) screenshot showing your internal web page and one (1) screenshot showing your external web page. Hint: This is a function built into the android virtual device. Make sure you include all other parts that are required in the report as described in the assignment requirements.
-![](Internal.png)
-_Internal Page_
-![](External.png)
-_External Page_
-
-
-**Skriv din rapport här!**
-
-_Du kan ta bort all text som finns sedan tidigare_.
-
-## Följande grundsyn gäller dugga-svar:
-
-- Ett kortfattat svar är att föredra. Svar som är längre än en sida text (skärmdumpar och programkod exkluderat) är onödigt långt.
-- Svaret skall ha minst en snutt programkod.
-- Svaret skall inkludera en kort övergripande förklarande text som redogör för vad respektive snutt programkod gör eller som svarar på annan teorifråga.
-- Svaret skall ha minst en skärmdump. Skärmdumpar skall illustrera exekvering av relevant programkod. Eventuell text i skärmdumpar måste vara läsbar.
-- I de fall detta efterfrågas, dela upp delar av ditt svar i för- och nackdelar. Dina för- respektive nackdelar skall vara i form av punktlistor med kortare stycken (3-4 meningar).
-
-Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
-
+``` java
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
 ```
-function errorCallback(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            // Geolocation API stöds inte, gör något
-            break;
-        case error.POSITION_UNAVAILABLE:
-            // Misslyckat positionsanrop, gör något
-            break;
-        case error.UNKNOWN_ERROR:
-            // Okänt fel, gör något
-            break;
-    }
+_Code from `MainActivity.java`_
+
+## Html page
+Jag skapade en html fil. Jag startade med att skapa en ny `assetfolder` inom mappen som kallas `app`. Jag skapa en ny fil inom mappen `asset` där jag skapa en ny fil som jag kalla `page.html`.
+Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
+
+``` html
+<!Doctype html>
+<html>
+<h1>MyPage</h1>
+<hr>
+<p>Välkommen till min sida</p>
+<p>Hoppas du har en trevlig dag</p>
+</html>
+```
+_Code from `page.html`_
+
+## Internal Page
+
+
+
+``` java
+public void showInternalWebPage()
+{
+    WebView myWebView = (WebView) findViewById(R.id.my_webview);
+    myWebView.loadUrl("file:///android_asset/page.html");
 }
 ```
+_Code from `MainActivity.java`_
 
-Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+``` java
+if (id == R.id.action_internal_web) {
+    showInternalWebPage();
+    Log.d("==>","Will display internal web page");
+    return true;
+}
+```
+_Code from `MainActivity.java`_
 
-Läs gärna:
+![](External.png)
+_Screenshot of `External Page`_
 
-- Boulos, M.N.K., Warren, J., Gong, J. & Yue, P. (2010) Web GIS in practice VIII: HTML5 and the canvas element for interactive online mapping. International journal of health geographics 9, 14. Shin, Y. &
-- Wunsche, B.C. (2013) A smartphone-based golf simulation exercise game for supporting arthritis patients. 2013 28th International Conference of Image and Vision Computing New Zealand (IVCNZ), IEEE, pp. 459–464.
-- Wohlin, C., Runeson, P., Höst, M., Ohlsson, M.C., Regnell, B., Wesslén, A. (2012) Experimentation in Software Engineering, Berlin, Heidelberg: Springer Berlin Heidelberg.
+## External page
+
+``` java
+if (id == R.id.action_external_web) {
+    showExternalWebPage();
+    Log.d("==>","Will display external web page");
+    return true;
+}
+```
+_Code from `MainActivity.java`_
+
+
+``` java
+if (id == R.id.action_external_web) 
+{
+    showExternalWebPage();
+    Log.d("==>","Will display external web page");
+    return true;
+}
+```
+_Code from `MainActivity.java`_
+
+![](Internal.png)
+_Screenshot of `Internal Page`_
+
