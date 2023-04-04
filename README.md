@@ -2,25 +2,27 @@
 # Assignment 2: WebView
 
 ## Rename App
-Genom att döpa om text value inom `strings,xml` med `Id ` som motsvarar `app_name`. Denna text value hämtas inom filen `AndoidManifest.xml`.
+Genom att döpa om text value inom `strings,xml` med `Id ` som motsvarar `app_name`.   
+Text value hämtas från `strings.xml` till filen `AndoidManifest.xml` som anropar efter innehållet av `App_name` komponenten.
 ```java
     android:label="@string/app_name"
+    // Code from `Androidmanifest.xml`
 ```
-_Code from `Androidmanifest.xml`_
 
 ``` java
     <string name="app_name"> My App </string>
-```
-_Code from `string.xml`_
-
+    // Code from `string.xml`
+```  
 
 
 ## Enable Internet
-Genom att lägga till
+Genom att lägga till `<uses-permission android:name="android.permission. INTERNET" />` tillåter man att internet används.  
+Denna koden används inom `AndroidManifest.xml` för att göra internet tillgängligt inom applikationen.
+
 ``` java
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> 
+    // Code from `AndroidManifest.xml`
 ```
-_Code from `AndroidManifest.xml`_
 
 ## Create Webview
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
@@ -31,9 +33,9 @@ Genom att ändra från text till webbview input. Istället för en textview komp
 ``` java
 <WebView
         android:id="@+id/my_webview"
-```
-_Code from `MainActivity.java`_
+        // Code from `MainActivity.java`
 
+```
 
 ## Private Member
 
@@ -43,8 +45,8 @@ Lägger till en klass kallad `Webview` med ett attribut som kallas `myWebView`.
 public class MainActivity extends AppCompatActivity {
     private WebView myWebView;
     ...
+    // Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
 
 
 Inom `onCreate()` anger man att `MyWebView` hämtar data från `id` som kallas `my_webview`
@@ -57,8 +59,9 @@ Inom `onCreate()` anger man att `MyWebView` hämtar data från `id` som kallas `
         setSupportActionBar(toolbar);
         myWebView = findViewById(R.id.my_webview);
         ...
+        // Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
+
 
 
 ## WebviewClient with Enabled Javascript
@@ -70,8 +73,9 @@ Genom att skapa en klass kallad WebSettings med webSettings som attribut. motsva
 ``` java
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        // Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
+
 
 ## Html page
 Jag skapade en html fil. Jag startade med att skapa en ny `assetfolder` inom mappen som kallas `app`. Jag skapa en ny fil inom mappen `asset` där jag skapa en ny fil som jag kalla `page.html`.
@@ -85,8 +89,8 @@ Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
 <p>Välkommen till min sida</p>
 <p>Hoppas du har en trevlig dag</p>
 </html>
+<!-- Code from `page.html` -->
 ```
-_Code from `page.html`_
 
 ## Internal Page
 
@@ -98,8 +102,8 @@ public void showInternalWebPage()
     WebView myWebView = (WebView) findViewById(R.id.my_webview);
     myWebView.loadUrl("file:///android_asset/page.html");
 }
+// Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
 
 
 ``` java
@@ -108,10 +112,10 @@ if (id == R.id.action_internal_web) {
     Log.d("==>","Will display internal web page");
     return true;
 }
+// Code from `MainActivity.java` 
 ```
-_Code from `MainActivity.java`_
 
-![](External.png)
+![](External.png =x50)
 _Screenshot of `External Page`_
 
 ## External page
@@ -122,8 +126,8 @@ if (id == R.id.action_external_web) {
     Log.d("==>","Will display external web page");
     return true;
 }
+// Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
 
 
 ``` java
@@ -133,9 +137,9 @@ if (id == R.id.action_external_web)
     Log.d("==>","Will display external web page");
     return true;
 }
+// Code from `MainActivity.java`
 ```
-_Code from `MainActivity.java`_
 
-![](Internal.png)
+![](Internal.png =x50)
 _Screenshot of `Internal Page`_
 
