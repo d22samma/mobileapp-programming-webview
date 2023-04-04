@@ -22,6 +22,12 @@ Created WebviewClient with Enabled Javascript
 Create a new WebViewClient to attach to the WebView
 Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
 
+Add html page as asset
+
+Implement External, Internal page
+Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
+Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
+
 For a passing grade (G) need to (in order):
 
 
