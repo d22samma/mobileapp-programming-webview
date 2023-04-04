@@ -1,13 +1,21 @@
 
 # Rapport
 
-For a passing grade (G) need to (in order):
-
+Rename App - Strings.
 Fork the webview app and clone the fork from your own Github repository in Android Studio
 Rename your App. Hint: `res/values/strings.xml`
+
+Enabled Internet AndroidManifest
 Enable Internet access for your App. Hint: `AndroidManifest.xml`
+
+Create Webview - Actvity_Main
 Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
 Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
+
+
+
+For a passing grade (G) need to (in order):
+
 Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`. Hint: `findViewById()`
 Locate the WebView element created in step 1 using the WebView ID
 Create a new WebViewClient to attach to the WebView
