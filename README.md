@@ -23,20 +23,18 @@ Create a new WebViewClient to attach to the WebView
 Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
 
 Add html page as asset
+Add a html page as an asset.
 
 Implement External, Internal page
 Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
 Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
-
-For a passing grade (G) need to (in order):
-
-
 `
-Add a html page as an asset.
-Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
-Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
 Write a short report where you explain the things that you have done. Include one (1) screenshot showing your internal web page and one (1) screenshot showing your external web page. Hint: This is a function built into the android virtual device. Make sure you include all other parts that are required in the report as described in the assignment requirements.
-Submit all artifacts as described in the assignment requirements.
+![](Internal.png)
+_Internal Page_
+![](External.png)
+_External Page_
+
 
 **Skriv din rapport här!**
 
