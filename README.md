@@ -6,7 +6,7 @@ Genom att döpa om text value inom `strings,xml` med `Id ` som motsvarar `app_na
 Text value hämtas från `strings.xml` till filen `AndoidManifest.xml` som anropar efter innehållet av `App_name` komponenten.
 ```java
     android:label="@string/app_name"
-    // Code from `Androidmanifest.xml`
+// Code from `Androidmanifest.xml`
 ```
 
 ``` java
@@ -115,7 +115,7 @@ if (id == R.id.action_internal_web) {
 // Code from `MainActivity.java` 
 ```
 
-![](External.png =x50)
+![](External.png){width=50 height=100}
 _Screenshot of `External Page`_
 
 ## External page
@@ -140,6 +140,6 @@ if (id == R.id.action_external_web)
 // Code from `MainActivity.java`
 ```
 
-![](Internal.png =x50)
+![](Internal.png){width=50 height=100}
 _Screenshot of `Internal Page`_
 
