@@ -1,6 +1,23 @@
 
 # Rapport
 
+For a passing grade (G) need to (in order):
+
+Fork the webview app and clone the fork from your own Github repository in Android Studio
+Rename your App. Hint: `res/values/strings.xml`
+Enable Internet access for your App. Hint: `AndroidManifest.xml`
+Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
+Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
+Create a private member variable called `myWebView` of the type `WebView` and instantiate it in `onCreate()`. Hint: `findViewById()`
+Locate the WebView element created in step 1 using the WebView ID
+Create a new WebViewClient to attach to the WebView
+Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()`
+Add a html page as an asset.
+Implement `showExternalWebPage()` and `showInternalWebPage()`. Hint: `loadUrl()`.
+Call `showExternalWebPage()` and `showInternalWebPage()` when menu dropdown is clicked. Hint: `onOptionsItemSelected()`.
+Write a short report where you explain the things that you have done. Include one (1) screenshot showing your internal web page and one (1) screenshot showing your external web page. Hint: This is a function built into the android virtual device. Make sure you include all other parts that are required in the report as described in the assignment requirements.
+Submit all artifacts as described in the assignment requirements.
+
 **Skriv din rapport här!**
 
 _Du kan ta bort all text som finns sedan tidigare_.
