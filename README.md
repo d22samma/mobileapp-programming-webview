@@ -26,9 +26,6 @@ Denna koden används inom `AndroidManifest.xml` för att göra internet tillgän
 
 ****
 ## Create Webview
-Create a WebView element in the layout file `content_main.xml` by replacing the existing `TextView`
-Give the WebView an ID. Hint: `android:id="@+id/my_webview"`
-
 Genom att ändra från text till webbview input. Istället för en textview komponent visas en webview upp istället. Med hjälp av `android:id="@+id/my_webview` ger man ett specifikt `id` till `Webview`.
 
 ``` java
