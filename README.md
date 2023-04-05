@@ -115,7 +115,7 @@ if (id == R.id.action_internal_web) {
 ```
 
 ![](Internal.png)
-_Screenshot of `External Page`_
+_Screenshot of `Internal Page`_
 
 ****
 ## External page
@@ -143,5 +143,5 @@ if (id == R.id.action_external_web)
 ```
 
 ![](External.png)
-_Screenshot of `Internal Page`_
+_Screenshot of `External Page`_
 
