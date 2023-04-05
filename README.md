@@ -64,9 +64,6 @@ Inom `onCreate()` anger man att `MyWebView` hämtar data från `id` som kallas `
 
 ****
 ## WebviewClient with Enabled Javascript
-Create a new WebViewClient to attach to the WebView
-Enable Javascript execution in your WebViewClient. Hint: `getSettings()` and `setJavaScriptEnabled()
-
 Genom att skapa en klass kallad WebSettings med webSettings som attribut. motsvarar att hämta settings inom myWebView. Websettings sätts med hjälp av `webSettings.setJavaScriptEnabled(true)`.
 
 ``` java
@@ -77,7 +74,7 @@ Genom att skapa en klass kallad WebSettings med webSettings som attribut. motsva
 
 ****
 ## Html page
-Jag skapade en html fil. Jag startade med att skapa en ny `assetfolder` inom mappen som kallas `app`. Jag skapa en ny fil inom mappen `asset` där jag skapa en ny fil som jag kalla `page.html`.
+Jag skapade en html fil. Jag startade med att skapa en ny `assetfolder` inom mappen som kallas `app`. Jag skapa en ny fil inom mappen `asset` som heter `page.html`.
 Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
 
 ``` html
@@ -94,6 +91,8 @@ Inom `page.html`filen skapa jag en egen ´Html kod´ till min egna lokala sida.
 ****
 ## Internal Page
 
+Genom att hämta en websida som är lokaliserad inom den lokala mappen som projektet ligger inom motsvarar en `Intern sida`.
+Som i detta fall motsvarar `page.html`.
 
 
 ``` java
@@ -115,18 +114,20 @@ if (id == R.id.action_internal_web) {
 // Code from `MainActivity.java` 
 ```
 
-![](External.png)
+![](Internal.png)
 _Screenshot of `External Page`_
 
 ****
 ## External page
 
+Genom att hämta en websida utanför den lokala mappen som projektet ligger inom, motsvarar en  `extern sida`.
+I detta fall motsvarar `https://www.his.se`.
+
 ``` java
-if (id == R.id.action_external_web) {
-    showExternalWebPage();
-    Log.d("==>","Will display external web page");
-    return true;
-}
+    public void showExternalWebPage(){
+        WebView myWebView = (WebView) findViewById(R.id.my_webview);
+        myWebView.loadUrl("https://www.his.se");
+    }
 // Code from `MainActivity.java`
 ```
 
@@ -141,6 +142,6 @@ if (id == R.id.action_external_web)
 // Code from `MainActivity.java`
 ```
 
-![](Internal.png)
+![](External.png)
 _Screenshot of `Internal Page`_
 
